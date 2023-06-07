@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+
+    <title>Welcome to Drug store</title>
+
+    <style>
+      .filter {
+        background: rgba(128, 255, 0, 0.632);
+        background: linear-gradient(
+          90deg,
+          rgba(128, 255, 0, 0.603) 0%,
+          rgba(50, 222, 133, 0.495) 64%
+        );
+        width: 40%;
+        height: 50vh;
+        margin-left: 27%;
+        position: relative;
+        bottom: 100px;
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid black;
+      }
+      .overinp {
+        margin-left: 30px;
+      }
+      .oke {
+        margin: 30px 20px;
+      }
+      .nameinp {
+        width: 220px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include("./partials/nav.ejs")%>
+    <div class="search-container">
+      <h1>Поиск лекарств в аптеках Узбекистана</h1>
+
+      <div class="butmore">
+        <a class="butmore" href="/">
+          <img class="icon" src="expand-button.png" alt="button" />
+        </a>
+      </div>
+    </div>
+
+    <div class="filter">
+      <div class="overinp">
+        <h3 class="oke">FILTER</h3>
+        <div class="inputs">
+          <form action="" method="post">
+            <div class="inpname oke">
+              <label for="name">Name:</label>
+              <input
+                type="text"
+                required
+                class="nameinp"
+                placeholder="Drug name . . ."
+                name="name"
+              />
+            </div>
+            <div class="inpprice oke">
+              <label for="price">Price</label>
+              <input type="number" required name="price" min="10" max="1000" />
+            </div>
+            <div class="inpregion oke">
+              <label for="region">Region</label>
+              <select id="regselect" name="region">
+                <option value="Tashkent">Tashkent</option>
+                <option value="Samarkand">Samarkand</option>
+                <option value="Bukhara">Buhoro</option>
+              </select>
+            </div>
+            <div class="inpdistrict oke">
+              <label for="district">District</label>
+              <select name="district">
+                <option value="Yunusabad">Yunusabad</option>
+                <option value="Samarqand Shahri">Samarqand Shahri</option>
+                <option value="Samarkand District">Samarkand District</option>
+                <option value="Urgut">Urgut</option>
+                <option value="Buxoro Shahri">Buxoro Shahri</option>
+                <option value="Bukhara District">Bukhara District</option>
+                <option value="Gijduvan">Gijduvan</option>
+              </select>
+            </div>
+            <button class="filterbutton">Search</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script defer src="../app.js"></script>
+  </body>
+</html>

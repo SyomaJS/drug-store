@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome to Drug Store</title>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+  </head>
+  <body>
+    <div class="first">
+      <%- include("./partials/nav.ejs")%> <%- include("./partials/search.ejs")%>
+      <div class="butmore">
+        <a class="butmore" href="/filter">
+          <img class="icon" src="expand-button.png" alt="button" />
+        </a>
+      </div>
+    </div>
+    <div class="upsearch">
+      <% if (results) { %>
+      <div class="medicine">
+        <h4 id="medname"><%= results[0]?.name%></h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Название</th>
+              <th>Производитель</th>
+              <th>Цена</th>
+              <th>Номер телефона</th>
+              <th>Адрес</th>
+              <th>Продавец</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for (const item of results) { %>
+            <tr>
+              <td><%= item.name %></td>
+              <td><%= item.manufacturer %></td>
+              <td><%= item.price %></td>
+              <td><%= item.phone %></td>
+              <td><%= item.address%></td>
+              <td><%= item.pharmname %></td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+      <% } %>
+    </div>
+  </body>
+</html>
